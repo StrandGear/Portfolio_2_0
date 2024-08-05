@@ -98,6 +98,8 @@
         .section1 { background-image: url('img/Opener_01_blurred.png'); }
         .section2 { background-image: url('img/LYR_1.png'); }
         .section3 { background-image: url('img/ph_grey.jpg');  } 
+        .section4 { background-image: url('img/Thumbnail.png');  } 
+        .section5 { background-image: url('img/lalalalrun.png');  } 
 
         /* Add more sections and images as needed */
 
@@ -189,6 +191,19 @@
         </div>
     </div>
 
+    <div class="parallax-section section4">
+        <!-- Particle container -->
+        <div class="container">
+            <div class="video-container">
+                <!-- Replace the URL with the embed code for your video -->
+                <iframe src="vids/You're It - Final Trailer.mp4" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p class="video-description">“You’re It” explores the cycle of abuse, illustrating how those who are abused can become the abuser themselves.<br>
+                I was developing layer related mechanics, UI implemntation, game states and took care of project's architecture.
+            </p>
+        </div>
+    </div>
+
     <div class="parallax-section section1">
         <!-- Particle container -->
         <div id="particles-js"></div> 
@@ -199,6 +214,20 @@
             </div>
             <p class="video-description">Travelling a mysterious ocean, with a Magical Ship, the player has to keep the ship in good condition for as long as possible. 
                 <br>Together with two other programmers we developed the game mechanics for mini challenges, a track of the game progress, the animal behavior and changing of weather conditions.  </p>
+        </div>
+    </div>
+
+    <div class="parallax-section section5">
+        <!-- Particle container -->
+        <div class="container">
+            <div class="video-container">
+                <!-- Replace the URL with the embed code for your video -->
+                <iframe src="vids/polaroid paranoia - Made with Clipchamp.mp4" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p class="video-description">Asymmetrical 1vs3 horror game, where the hunter quickly becomes the hunted. In it players break into a haunted house trying to get a legendary snapshot of the
+                rumored ghost. <br><br>
+                It was a multiplayer semester project in which I've got a chance to try Unreal Engine and learned networking.
+            </p>
         </div>
     </div>
 
@@ -427,7 +456,7 @@
         
         // JavaScript to change background images as you scroll
         const sections = document.querySelectorAll('.parallax-section');
-        const images = ['img/ph_grey.jpg', 'img/Opener_01_blurred.png', 'img/LYR_1.png']; // Replace with your image URLs
+        const images = ['img/ph_grey.jpg','img/Thumbnail.png', 'img/Opener_01_blurred.png','img/lalalalrun.png', 'img/LYR_1.png']; // Replace with your image URLs
         let currentImageIndex = 0;
 
         function changeBackgroundImage() {
