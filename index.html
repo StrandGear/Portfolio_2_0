@@ -63,7 +63,7 @@
             background-size: cover;
             background-attachment: fixed;
             /* position: relative; */
-            text-align: center;
+            text-align: left ;
         }
 
         .parallax-section h1 {
@@ -94,16 +94,14 @@
             height: 100%;
         }
 
-        /* Add background images to each section */
+        /* background images for each section */
         .section1 { background-image: url('img/Opener_01_blurred.png'); }
         .section2 { background-image: url('img/LYR_1.png'); }
         .section3 { background-image: url('img/ph_grey.jpg');  } 
         .section4 { background-image: url('img/Thumbnail.png');  } 
         .section5 { background-image: url('img/lalalalrun.png');  } 
 
-        /* Add more sections and images as needed */
-
-        /* Ensure sections stack vertically */
+        /* ensure sections stack vertically */
         .parallax-section {
             display: flex;
             align-items: center;
@@ -120,10 +118,11 @@
         }
 
         .text-description-container:nth-child(even) {
-            flex-direction: row-reverse; /* Reverse order for even containers */
+            flex-direction: row-reverse; /* reverse order for even containers */
         }
         
         .content {
+            text-align: left ;
             flex: 1;
             width: 100%;
             padding: 20px;
@@ -134,14 +133,9 @@
             font-size: 1.3vw;
         }
         
-        /*
-        .content:first-child {
-            margin-right: 200px;
-        }
-        */
         
         .description {
-            backdrop-filter: blur(5px); /* Apply the glass effect */
+            backdrop-filter: blur(5px); /* the glass effect */
             padding: 20px;
         }
 
@@ -177,9 +171,9 @@
         <div class="text-description-container">
             <div class="content">
                 <h2>Skills</h2>
-                <p>4 years of experience in Unity<br>
-                #OOP, # C#, #Java,<br> 
-                #WebDevelopment, #3D_Modeling</p>
+                <p>4 years of experience in Unity engine<br>
+                I have worked on multiple different projects, most of them were done in my study 
+                course and developed within seven weeks in a team with artists, other programmers and designers. </p>
             </div>
             <div class="content">
                 <h2>Degree</h2>
