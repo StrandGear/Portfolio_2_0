@@ -79,11 +79,17 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             font-size: larger;
         }
-
+/*
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
+        }
+*/
+        .video-container {
+            position: relative;
+            padding-bottom: 0; /* remove the hack */
+            height: auto;      /* let content define height */
         }
 
         .video-container iframe {
@@ -93,6 +99,13 @@
             width: 100%;
             height: 100%;
         }
+
+        .video-container video {
+            width: 100%;
+            height: auto; /* maintain aspect ratio */
+            display: block;
+        }
+
 
         /* background images for each section */
         .section1 { background-image: url('img/Opener_01_blurred.png'); }
@@ -171,17 +184,16 @@
         <div class="text-description-container">
             <div class="content">
                 <h2>Skills</h2>
-                <p>4 years of experience in Unity engine<br>
+                <p>4 years of experience in Unity engine.<br>
                 I have worked on multiple different projects, most of them were done in my study 
                 course and developed within seven weeks in a team with artists, other programmers and designers. </p>
             </div>
             <div class="content">
                 <h2>Degree</h2>
-                <p>Studied Computer Science 
-                    in Moscow State University<br>
-                    Currently studying Game Development 
-                    in Cologne Game Lab.<br>
-                I love making games and learning new softwares!</p>
+                <p>Currently pursuing a Game Development degree at Cologne Game Lab.
+                    Studied Computer Science in Moscow State University.<br>
+                    <br>
+                I am very keen on making games and learning new softwares!</p>
             </div>
         </div>
     </div>
@@ -190,39 +202,17 @@
         <!-- Particle container -->
         <div class="container">
             <div class="video-container">
-                <!-- Replace the URL with the embed code for your video -->
-                <iframe src="vids/You're It - Final Trailer.mp4" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <p class="video-description">https://strandgear.itch.io/youre-it 
-                <br>“You’re It” explores the cycle of abuse, illustrating how those who are abused can become the abuser themselves.<br>
-                I was developing main game mechanics, UI implemntation, game states and took care of the project's architecture.
-            </p>
-        </div>
-    </div>
+                <video controls>
+                <source src="vids/You're It - Final Trailer.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
 
-    <div class="parallax-section section1">
-        <!-- Particle container -->
-        <div id="particles-js"></div> 
-        <div class="container">
-            <div class="video-container">
-                <!-- Replace the URL with the embed code for your video -->
-                <iframe src="vids/contaimers.mp4" frameborder="0" allowfullscreen></iframe>
             </div>
-            <p class="video-description">Travelling a mysterious ocean, with a Magical Ship, the player has to keep the ship in good condition for as long as possible. 
-                <br>Together with two other programmers we developed mini challenges, a track of the game progress, the animal behavior and changing of weather conditions.  </p>
-        </div>
-    </div>
-
-    <div class="parallax-section section5">
-        <!-- Particle container -->
-        <div class="container">
-            <div class="video-container">
-                <!-- Replace the URL with the embed code for your video -->
-                <iframe src="vids/polaroid paranoia - Made with Clipchamp.mp4" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <p class="video-description">Asymmetrical 1vs3 horror game, where the hunter quickly becomes the hunted. In it players break into a haunted house trying to get a legendary snapshot of the
-                rumored ghost. <br><br>
-                It was a multiplayer semester project in which I've got a chance to try Unreal Engine out and learned more about network in games.
+            <p class="video-description">
+                <a href="https://strandgear.itch.io/youre-it" style="background-color: #AC4B9E" target="_blank">Itch Page</a> <br><br>  
+                <br>“You’re It” explores the cycle of abuse, illustrating how those who are abused can become the abuser themselves.<br><br>
+                It was a semester project we created in six weeks and I was working in a team with artists, designers and another programmer.
+                I was a lead programmer and worked on the main game mechanics, provided tools for the designers to create and modify puzzles, developed the complete UI and structured the overall project architecture.
             </p>
         </div>
     </div>
@@ -232,16 +222,51 @@
         <div id="particles-js-lyr"></div> 
         <div class="container">
             <div class="video-container">
-                <!-- Replace the URL with the embed code for your video -->
-                <iframe src="vids/lyr (1).mp4" frameborder="0" allowfullscreen></iframe>
+                <video controls>
+                <source src="vids/lyr (1).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
             </div>
-            <p class="video-description">A 3D Puzzle Adventure game with Walking Sim elements developed in 7 weeks as a semester project. The player controls a fairy named Lyr, the sole survivor of a tragedy that destroyed the fairie’s forest.<br>
-            I was responsible for the core game mechanincs such as Drag&Drop, expanded Inventory System, ojects interaction, UI functionality.
+            
+            <p class="video-description"><a href="https://strandgear.itch.io/lyr-tales-of-the-shattered-forest" style="background-color: #567263" target="_blank">Itch Page</a><br><br>
+                A 3D Puzzle Adventure with walking-sim elements, developed in 7 weeks as a semester project. <br><br>
+            <br>I implemented core gameplay systems including character movement, drag & drop interactions, a scalable inventory system, 
+                object interaction mechanics, and UI functionality.
             </p>
         </div>
     </div>
 
-    <!-- Add more sections with videos as needed -->
+    <div class="parallax-section section5">
+        <!-- Particle container -->
+        <div class="container">
+            <div class="video-container">
+                <video controls>
+                <source src="vids/polaroid paranoia - Made with Clipchamp.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="video-description">A multiplayer 1vs3 asymmetrical horror game where hunters quickly become the hunted. <br><br>
+                The game was developed in Unreal Engine, focusing on client-server architecture. I got an experience with multiplayer systems and working in a new engine environment.
+            </p>
+        </div>
+    </div>
+
+    <div class="parallax-section section1">
+        <!-- Particle container -->
+        <div id="particles-js"></div> 
+        <div class="container">
+            <div class="video-container">
+                <video controls>
+                <source src="vids/contaimers.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="video-description">A semester project about surviving on a magical ship while maintaining its condition.<br><br> 
+                I worked in a small team with artists, designers, and programmers. I collaborated with two programmers to implement mini-challenges, 
+                progression tracking, animal behavior, and dynamic weather 
+            systems. I also learned to adapt my code to follow the team’s architecture, provided by our lead programmer.</p>
+        </div>
+    </div>
 
     <script>
         //Particles contaimer
@@ -452,7 +477,7 @@
         
         // JavaScript to change background images as you scroll
         const sections = document.querySelectorAll('.parallax-section');
-        const images = ['img/ph_grey.jpg','img/Thumbnail.png', 'img/Opener_01_blurred.png','img/lalalalrun.png', 'img/LYR_1.png']; // Replace with your image URLs
+        const images = ['img/ph_grey.jpg','img/Thumbnail.png', 'img/LYR_1.png', 'img/lalalalrun.png','img/Opener_01_blurred.png' ]; // replace in order
         let currentImageIndex = 0;
 
         function changeBackgroundImage() {
