@@ -144,6 +144,7 @@
         }
 
         .video-container video {
+            position: relative;
             width: 100%;
             height: auto; /* maintain aspect ratio */
             display: block;
@@ -219,16 +220,21 @@
             .text-description-container{
                 height: 20%;
             }
-            .section3 {
-            flex-direction: column;
-            }
+
+.parallax-section.section3 {
+    height: auto;          /* let content define height */
+    min-height: 100vh;     /* optional, ensures at least one viewport */
+    justify-content: flex-start; /* align content to top */
+    padding: 0;         /* give some breathing room */
+  }
 
             .section3 .section-content,
             .section3 .text-description-container {
                 width: 100%;
                 margin: 0;
                 padding: 0;
-                display: block; 
+                display: flex; 
+                flex-direction: column;
                 text-align: center;
             }
             .section3 h1 {
@@ -237,7 +243,7 @@
 
             .content {
                 width: 90%;
-                margin: 0 auto;
+                margin: 10px 0;
                 font-size: 4vw; /* responsive font */
             }
             .video-description {
@@ -265,8 +271,6 @@
 <body>
 
     <button id="topBtn" title="Go to top">Top</button>
-    
-
 
     <div class="parallax-section section3" id="parallax-section3">
         <div class="section-content">
