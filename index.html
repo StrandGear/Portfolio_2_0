@@ -627,6 +627,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 isScrolling = false;
             }, 800);
         });
+    }else {
+        // --- Mobile swipe scroll ---
+        let startY = 0;
+        window.addEventListener("touchstart", (e) => {
+            startY = e.touches[0].clientY;
+        });
+
+        window.addEventListener("touchend", (e) => {
+            if (isScrolling) return;
+            const endY = e.changedTouches[0].clientY;
+            const deltaY = startY - endY;
+
+            // threshold so tiny movements don’t trigger
+            if (Math.abs(deltaY) > 50) {
+                isScrolling = true;
+
+                if (deltaY > 0 && currentIndex < sections.length - 1) {
+                    currentIndex++;
+                } else if (deltaY < 0 && currentIndex > 0) {
+                    currentIndex--;
+                }
+
+                scrollToSection(currentIndex);
+
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 800);
+            }
+        });
     }
 
     window.addEventListener("scroll", () => {
