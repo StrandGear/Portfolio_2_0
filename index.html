@@ -22,6 +22,30 @@
             overflow-x: hidden; /* Hide horizontal scrollbar */
         }
 
+        /*TOP BUTTON*/
+        #topBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #55555592;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+            transition: background-color .3s, 
+                opacity .5s, visibility .5s;
+            }
+
+        #topBtn:hover {
+            background-color: #141414;
+            }
+        /*TOP BUTTON*/
+
         a {
             font-size: large;
             color: #f0f0f0;
@@ -55,6 +79,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
+            pointer-events: none;
         }
 
         .parallax-section {
@@ -108,11 +133,12 @@
 
 
         /* background images for each section */
-        .section1 { background-image: url('img/Opener_01_blurred.png'); }
-        .section2 { background-image: url('img/LYR_1.png'); }
-        .section3 { background-image: url('img/ph_grey.jpg');  } 
-        .section4 { background-image: url('img/Thumbnail.png');  } 
-        .section5 { background-image: url('img/lalalalrun.png');  } 
+    /*  .section1 { background-image: url('img/Opener_01_blurred.png'); } */
+        .section2 { background-image: url('img/cast.png'); }
+        .section3 { background-image: url('img/LYR_1.png'); }
+        .section4 { background-image: url('img/ph_grey.jpg');  } 
+        .section5 { background-image: url('img/Thumbnail.png');  } 
+        .section6 { background-image: url('img/lalalalrun.png');  } 
 
         /* ensure sections stack vertically */
         .parallax-section {
@@ -158,10 +184,18 @@
             height: 20%;
         }
         }
+
+        .caption {
+            font-size: 0.7em; 
+            font-style: italic; 
+            color: #414141;   
+        }
+
     </style>
 </head>
 <body>
 
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
     
     <header>
         <h1>Anastasiia Ermolaeva</h1>
@@ -197,8 +231,7 @@
             </div>
         </div>
     </div>
-
-    <div class="parallax-section section4">
+<div class="parallax-section section4">
         <!-- Particle container -->
         <div class="container">
             <div class="video-container">
@@ -213,6 +246,27 @@
                 <br>“You’re It” explores the cycle of abuse, illustrating how those who are abused can become the abuser themselves.<br><br>
                 It was a semester project we created in six weeks and I was working in a team with artists, designers and another programmer.
                 I was a lead programmer and worked on the main game mechanics, provided tools for the designers to create and modify puzzles, developed the complete UI and structured the overall project architecture.
+            </p>
+        </div>
+    </div>
+
+    <div class="parallax-section section1">
+        <!-- Particle container -->
+        <div class="container">
+            <div class="video-container">
+                <video controls>
+                <source src="vids/spoonful.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+                <i class="caption">Early prototype footage</i>
+            </div>
+            <p class="video-description">
+                A side project at <a href="https://spoonful.games/" style="background-color: #ff8500" target="_blank">Spoonful</a>: a visual novel–style local co-op exhibited in a museum. 
+                Multiple stations let student groups play simultaneously, each with a unique story path.
+                <br><br>
+                I developed a custom dialogue editor in Unity GUI, featuring multiple node parameters and tools to streamline the creation of branching dialogue trees.  
+                To achieve this, I implemented a peer-to-peer networking system: all devices on the local network could act as a host, and with one button press the system synchronized connections across up to five devices. Each station then automatically loaded a different character and storyline depending on the game state and player responses.  
+                The setup was designed to be simple and reliable so that museum staff could run the experience without requiring technical support.
             </p>
         </div>
     </div>
@@ -250,9 +304,9 @@
             </p>
         </div>
     </div>
-
+<!-- Contaimer
     <div class="parallax-section section1">
-        <!-- Particle container -->
+        
         <div id="particles-js"></div> 
         <div class="container">
             <div class="video-container">
@@ -267,8 +321,9 @@
             systems. I also learned to adapt my code to follow the team’s architecture, provided by our lead programmer.</p>
         </div>
     </div>
-
+-->
     <script>
+       /*
         //Particles contaimer
         particlesJS("particles-js", {
             particles: {
@@ -371,7 +426,7 @@
             },
             retina_detect: true
         });
-
+*/
         //Particles Lyr
         particlesJS("particles-js-lyr", {
             particles: {
@@ -477,7 +532,7 @@
         
         // JavaScript to change background images as you scroll
         const sections = document.querySelectorAll('.parallax-section');
-        const images = ['img/ph_grey.jpg','img/Thumbnail.png', 'img/LYR_1.png', 'img/lalalalrun.png','img/Opener_01_blurred.png' ]; // replace in order
+        const images = ['img/ph_grey.jpg','img/Thumbnail.png','img/cast.png', 'img/LYR_1.png', 'img/lalalalrun.png' ]; // replace in order
         let currentImageIndex = 0;
 
         function changeBackgroundImage() {
@@ -489,6 +544,27 @@
 
         document.addEventListener('scroll', changeBackgroundImage);
         changeBackgroundImage(); // Initial background image change
+    </script>
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("topBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        }
     </script>
 </body>
 </html>
