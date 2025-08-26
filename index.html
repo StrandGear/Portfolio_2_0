@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <title>StrandGear</title>
+    <title>&#127918; Anastasiia Ermolaeva</title>
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -69,9 +69,9 @@
         }
 
         .social-logo {
-            width: 40px; /* Set the width and height according to your logo size */
+            width: 40px; 
             height: 40px;
-            transition: transform 0.2s; /* Add the scale-up animation */
+            transition: transform 0.2s; /* scale-up animation */
         }
 
         .social-logo:hover {
@@ -175,10 +175,6 @@
             width: 80%;
         }
 
-        .text-description-container:nth-child(even) {
-            flex-direction: row-reverse; /* reverse order for even containers */
-        }
-        
         .content {
             text-align: left ;
             flex: 1;
@@ -197,24 +193,56 @@
             padding: 20px;
         }
 
-        @media screen and (max-width: 540px) {
-        #parallax-section3 {align-items: flex-start;}
-        .text-description-container{
-            height: 20%;
-        }
-        }
 
         .caption {
-            font-size: 0.7em; 
-            font-style: italic; 
-            color: #414141;   
+                    font-size: 0.7em; 
+                    font-style: italic; 
+                    color: #414141;   
+                }
+
+
+        @media screen and (max-width: 540px) {
+            #parallax-section3 {
+                align-items: flex-start;
+                justify-content: start;
+            }
+            .text-description-container{
+                height: 20%;
+            }
+            .section3 {
+            flex-direction: column;
+            }
+
+            .section3 .section-content,
+            .section3 .text-description-container {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                display: block; 
+                text-align: center;
+            }
+            .section3 h1 {
+                position: sticky;
+               top: 0;
+            }
+
+            .content {
+                width: 90%;
+                margin: 0 auto;
+                font-size: 4vw; /* responsive font */
+            }
+            .video-description {
+                font-size: 4vw;
+            }
         }
+
+       
 
     </style>
 </head>
 <body>
 
-    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+    <button id="topBtn" title="Go to top">Top</button>
     
 
 
@@ -284,7 +312,7 @@
                 <i class="caption">Early prototype footage</i>
             </div>
             <p class="video-description">
-                A side project at <a href="https://spoonful.games/" style="background-color: #ff8500" target="_blank">Spoonful</a>: a visual novel–style local co-op exhibited in a museum. 
+                A side project at <a href="https://spoonful.games/" style="background-color: #ff8500" target="_blank">Spoonful</a> studio: a visual novel–style local co-op exhibited in a museum. 
                 Multiple stations let student groups play simultaneously, each with a unique story path.
                 <br><br>
                 I developed a custom dialogue editor in Unity GUI, featuring multiple node parameters and tools to streamline the creation of branching dialogue trees.  
@@ -553,7 +581,6 @@
             retina_detect: true
         });
         
-        // JavaScript to change background images as you scroll
         const sections = document.querySelectorAll('.parallax-section');
         const images = ['img/ph_grey.jpg','img/Thumbnail.png','img/cast.png', 'img/LYR_1.png', 'img/lalalalrun.png' ]; // replace in order
         let currentImageIndex = 0;
@@ -566,7 +593,7 @@
         }
 
         document.addEventListener('scroll', changeBackgroundImage);
-        changeBackgroundImage(); // Initial background image change
+        changeBackgroundImage(); // initial background image change
     </script>
 
 <script>
@@ -581,25 +608,27 @@ document.addEventListener("DOMContentLoaded", () => {
         sections[index].scrollIntoView({ behavior: "smooth" });
     }
 
-    // Handle scroll wheel
-    window.addEventListener("wheel", (event) => {
-        if (isScrolling) return;
-        isScrolling = true;
+    const isDesktop = /Win|Mac|Linux/i.test(navigator.platform);    
 
-        if (event.deltaY > 0 && currentIndex < sections.length - 1) {
-            currentIndex++;
-        } else if (event.deltaY < 0 && currentIndex > 0) {
-            currentIndex--;
-        }
+    if (isDesktop) {
+        window.addEventListener("wheel", (event) => {
+            if (isScrolling) return;
+            isScrolling = true;
 
-        scrollToSection(currentIndex);
+            if (event.deltaY > 0 && currentIndex < sections.length - 1) {
+                currentIndex++;
+            } else if (event.deltaY < 0 && currentIndex > 0) {
+                currentIndex--;
+            }
 
-        setTimeout(() => {
-            isScrolling = false;
-        }, 800);
-    });
+            scrollToSection(currentIndex);
 
-    // Show/hide top button
+            setTimeout(() => {
+                isScrolling = false;
+            }, 800);
+        });
+    }
+
     window.addEventListener("scroll", () => {
         if (window.scrollY > 20) {
             topBtn.style.display = "block";
@@ -608,12 +637,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Top button click
     topBtn.addEventListener("click", () => {
         currentIndex = 0; // reset index
         scrollToSection(currentIndex);
     });
 });
+
 </script>
 
 </body>
