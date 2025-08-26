@@ -396,6 +396,9 @@
     </div>
 -->
     <script>
+
+         const isWideScreen = window.innerWidth > 540;
+
        /*
         //Particles contaimer
         particlesJS("particles-js", {
@@ -501,6 +504,7 @@
         });
 */
         //Particles Lyr
+        if (isWideScreen) {
         particlesJS("particles-js-lyr", {
             particles: {
                 number: {
@@ -602,9 +606,7 @@
             },
             retina_detect: true
         });
-
-        const isWideScreen = window.innerWidth > 540;
-
+    }
         const sections = document.querySelectorAll('.parallax-section');
         const images = ['img/ph_grey.jpg','img/Thumbnail.png','img/cast.png', 'img/LYR_1.png', 'img/lalalalrun.png' ]; // replace in order
         let currentImageIndex = 0;
