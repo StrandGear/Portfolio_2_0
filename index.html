@@ -199,7 +199,13 @@
                     color: #414141;   
                 }
 
-
+            @media (min-width: 541px) {
+                body {
+                    scroll-snap-type: y mandatory;
+                    overflow-y: hidden; /* your JS takes over scrolling */
+                }
+            }
+            
         @media screen and (max-width: 540px) {
             body {
                 overflow-x: hidden;
@@ -602,7 +608,7 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    const isWideScreen = window.innerWidth >= 1024;
+    const isWideScreen = window.innerWidth > 540;
     const sections = document.querySelectorAll(".parallax-section");
     const topBtn = document.getElementById("topBtn");
 
@@ -616,7 +622,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //const isDesktop = /Win|Mac|Linux/i.test(navigator.platform);    
 
     
-        window.addEventListener("wheel", (event) => {
+    if (isWideScreen){    window.addEventListener("wheel", (event) => {
             if (isScrolling) return;
             isScrolling = true;
 
@@ -632,7 +638,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 isScrolling = false;
             }, 800);
         });
-    
+    }
 
     window.addEventListener("scroll", () => {
         if (window.scrollY > 20) {
