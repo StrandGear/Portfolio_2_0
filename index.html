@@ -17,9 +17,12 @@
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
+            height: 100%; 
             background-color: #f0f0f0;
             color: black;
             overflow-x: hidden; /* Hide horizontal scrollbar */
+            scroll-snap-type: y mandatory;
+            overflow-y: hidden; 
         }
 
         /*TOP BUTTON*/
@@ -84,6 +87,7 @@
 
         .parallax-section {
             height: 100vh;
+            scroll-snap-align: start;
             background-position: center;
             background-size: cover;
             background-attachment: fixed;
@@ -91,9 +95,24 @@
             text-align: left ;
         }
 
+
+        .section-content {
+            display: block;
+            flex-direction: column; /* stack header + text vertically */
+            align-items: center;    /* optional horizontal centering */
+            width: 100%;
+            text-align: center;
+        }
+        .parallax-section.section3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* center content horizontally */
+            align-items: flex-start; /* align content to top */
+            height: 100vh;
+        }
         .parallax-section h1 {
             font-size: 2rem;
-            padding-top: 100px;
+            padding-top: 0; 
         }
 
         .container {
@@ -197,24 +216,28 @@
 
     <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
     
-    <header>
-        <h1>Anastasiia Ermolaeva</h1>
-        <h3>A game developer based in Cologne</h2>
-            <a href="mailto:gearstrand@gmail.com?">gearstrand@gmail.com</a>
-        <div class="social-bar">
-        <a href="https://github.com/StrandGear" target="_blank">
-            <img src="img/Github-512.png" alt="github" class="social-logo">
-        </a>
-        <a href="https://www.artstation.com/strandgear" target="_blank">
-            <img src="img/artsta_logo.png" alt="artstation" class="social-logo">
-        </a>
-        <a href="https://www.linkedin.com/in/anastasiia-ermolaeva/" target="_blank">
-            <img src="img/linkedin-icon-2048x2048-7zb6wa8q.png" alt="linkedin" class="social-logo">
-            </a>
-        </div>
-    </header>
+
 
     <div class="parallax-section section3" id="parallax-section3">
+        <div class="section-content">
+        <header>
+            <h1>Anastasiia Ermolaeva</h1>
+            <h3>A game developer based in Cologne</h2>
+                <a href="mailto:gearstrand@gmail.com?">gearstrand@gmail.com</a>
+            <div class="social-bar">
+            <a href="https://github.com/StrandGear" target="_blank">
+                <img src="img/Github-512.png" alt="github" class="social-logo">
+            </a>
+            <a href="https://www.artstation.com/strandgear" target="_blank">
+                <img src="img/artsta_logo.png" alt="artstation" class="social-logo">
+            </a>
+            <a href="https://www.linkedin.com/in/anastasiia-ermolaeva/" target="_blank">
+                <img src="img/linkedin-icon-2048x2048-7zb6wa8q.png" alt="linkedin" class="social-logo">
+                </a>
+            </div>
+        </header>
+        </div>
+
         <div class="text-description-container">
             <div class="content">
                 <h2>Skills</h2>
@@ -545,26 +568,53 @@
         document.addEventListener('scroll', changeBackgroundImage);
         changeBackgroundImage(); // Initial background image change
     </script>
-    <script>
-        // Get the button
-        let mybutton = document.getElementById("topBtn");
 
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".parallax-section");
+    const topBtn = document.getElementById("topBtn");
 
-        function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
+    let currentIndex = 0;
+    let isScrolling = false;
+
+    function scrollToSection(index) {
+        sections[index].scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Handle scroll wheel
+    window.addEventListener("wheel", (event) => {
+        if (isScrolling) return;
+        isScrolling = true;
+
+        if (event.deltaY > 0 && currentIndex < sections.length - 1) {
+            currentIndex++;
+        } else if (event.deltaY < 0 && currentIndex > 0) {
+            currentIndex--;
+        }
+
+        scrollToSection(currentIndex);
+
+        setTimeout(() => {
+            isScrolling = false;
+        }, 800);
+    });
+
+    // Show/hide top button
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+            topBtn.style.display = "block";
         } else {
-            mybutton.style.display = "none";
+            topBtn.style.display = "none";
         }
-        }
+    });
 
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-        }
-    </script>
+    // Top button click
+    topBtn.addEventListener("click", () => {
+        currentIndex = 0; // reset index
+        scrollToSection(currentIndex);
+    });
+});
+</script>
+
 </body>
 </html>
