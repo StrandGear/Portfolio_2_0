@@ -201,6 +201,11 @@
 
 
         @media screen and (max-width: 540px) {
+            body {
+                overflow-x: hidden;
+                overflow-y: auto; 
+            }
+
             #parallax-section3 {
                 align-items: flex-start;
                 justify-content: start;
@@ -597,6 +602,7 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+    const isWideScreen = window.innerWidth >= 1024;
     const sections = document.querySelectorAll(".parallax-section");
     const topBtn = document.getElementById("topBtn");
 
@@ -607,9 +613,9 @@ document.addEventListener("DOMContentLoaded", () => {
         sections[index].scrollIntoView({ behavior: "smooth" });
     }
 
-    const isDesktop = /Win|Mac|Linux/i.test(navigator.platform);    
+    //const isDesktop = /Win|Mac|Linux/i.test(navigator.platform);    
 
-    if (isDesktop) {
+    
         window.addEventListener("wheel", (event) => {
             if (isScrolling) return;
             isScrolling = true;
@@ -626,7 +632,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 isScrolling = false;
             }, 800);
         });
-    }
+    
 
     window.addEventListener("scroll", () => {
         if (window.scrollY > 20) {
