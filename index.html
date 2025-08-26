@@ -200,6 +200,21 @@
                     color: #414141;   
                 }
 
+        .mobile-profile-pic {
+                display: none; /* hidden by default */
+                width: 80px;
+                height: 80px;
+                border-radius: 50%; /* makes it round */
+                margin-bottom: 5px;
+        }
+        .mobile-header-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px; /* spacing between text and image */
+        }
+
             @media (min-width: 541px) {
                 body {
                     scroll-snap-type: y mandatory;
@@ -221,12 +236,12 @@
                 height: 20%;
             }
 
-.parallax-section.section3 {
-    height: auto;          /* let content define height */
-    min-height: 100vh;     /* optional, ensures at least one viewport */
-    justify-content: flex-start; /* align content to top */
-    padding: 0;         /* give some breathing room */
-  }
+            .parallax-section.section3 {
+                height: auto;          /* let content define height */
+                min-height: 100vh;     /* optional, ensures at least one viewport */
+                justify-content: flex-start; /* align content to top */
+                padding: 0;         /* give some breathing room */
+            }
 
             .section3 .section-content,
             .section3 .text-description-container {
@@ -236,6 +251,7 @@
                 display: flex; 
                 flex-direction: column;
                 text-align: center;
+                align-items: center;
             }
             .section3 h1 {
                top: 0;
@@ -262,6 +278,9 @@
                 border-radius: 10px; 
                 margin: 20px; 
             }
+            .mobile-profile-pic {
+                display: block;
+            }
         }
 
        
@@ -276,7 +295,10 @@
         <div class="section-content">
         <header>
             <h1>Anastasiia Ermolaeva</h1>
-            <h3>A game developer based in Cologne</h2>
+            <div class="mobile-header-row">
+                <h3>A game developer based in Cologne</h3>
+                <img src="img/ph_grey_small.jpg" alt="Profile Picture" class="mobile-profile-pic">
+            </div>
                 <a href="mailto:gearstrand@gmail.com?">gearstrand@gmail.com</a>
             <div class="social-bar">
             <a href="https://github.com/StrandGear" target="_blank">
