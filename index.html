@@ -150,6 +150,12 @@
             display: block;
         }
 
+        .project-label {
+        color: #0c8b38; /* pick any accent color */
+        font-weight: lighter ;
+        }
+
+
 
         /* background images for each section */
     /*  .section1 { background-image: url('img/Opener_01_blurred.png'); } */
@@ -343,11 +349,14 @@
                 </video>
             </div>
             <p class="video-description">
-                <a href="https://strandgear.itch.io/youre-it" style="background-color: #AC4B9E" target="_blank">Itch Page</a> <br><br>  
-                    This six-week semester project was my first experience as a lead programmer. 
-                    I built systems that allowed every object to be interacted with in unique ways, designed tools for quick puzzle prototyping, and implemented narrative queues to keep audio and cutscenes in sync. 
-                    To streamline development, I extended Unity’s UI with custom buttons and introduced a central Game State Machine, which kept new features from clashing and saved us time. 
-                    Working in a larger team also pushed me to create clear in-editor documentation so designers and artists could always access an info about components.
+                <span class="project-label" style="color: #AC4B9E">Team size: 8 </span><br>
+                <span class="project-label" style="color: #AC4B9E">Project time: 7 weeks </span><br>
+                <span class="project-label" style="color: #AC4B9E">Genre: Puzzle adventure, psychological horror </span><br>
+                <a href="https://strandgear.itch.io/youre-it" style="background-color: #AC4B9E" target="_blank">Itch Page</a><br><br>
+                As lead programmer, I created interaction systems where every object responded differently to players.  
+                I built tools for fast puzzle prototyping, a narrative queue system for audio and cutscenes, and extended Unity’s UI with custom buttons.  
+                To keep features from clashing, I implemented a central Game State Machine, which streamlined development and reduced debugging time.  
+                I also wrote clear in-editor documentation to support designers and artists.  
             </p>
         </div>
     </div>
@@ -363,12 +372,13 @@
                 <i class="caption">Early prototype footage</i>
             </div>
             <p class="video-description">
-                A side project at the <a href="https://spoonful.games/" style="background-color: #ff8500" target="_blank">Spoonful</a> studio: a visual novel–style local co-op exhibited in a museum. 
-                Multiple stations let student groups play simultaneously, each with a unique story path.
-                <br><br>
-                I developed a custom dialogue editor in Unity GUI, featuring multiple node parameters and tools to streamline the creation of branching dialogue trees.  
-                To achieve this, I implemented a peer-to-peer networking system: all devices on the local network could act as a host, and with one button press the system synchronized connections across up to five devices. Each station then automatically loaded a different character and storyline depending on the game state and player responses.  
-                The setup was designed to be simple and reliable so that museum staff could run the experience without requiring technical support.
+                <span class="project-label" style="color: #ff8500">Team size: 3 </span><br>
+                <span class="project-label" style="color: #ff8500">Project time: 4 months</span> <br>
+                <span class="project-label" style="color: #ff8500">Genre: Visual novel / co-op installation </span><br><br>
+                A side project at <a href="https://spoonful.games/" style="background-color: #ff8500" target="_blank">Spoonful</a>, exhibited in a museum.  
+                I created a custom Unity dialogue editor with branching-tree tools, making complex narrative authoring simple for non-programmers.  
+                I also built a peer-to-peer networking system where devices auto-synced and loaded unique character routes, enabling up to five players to play in parallel.  
+                The system was designed to be stable and effortless for museum staff to operate.
             </p>
         </div>
     </div>
@@ -383,14 +393,17 @@
                 Your browser does not support the video tag.
                 </video>
             </div>
-            
-            <p class="video-description"><a href="https://strandgear.itch.io/lyr-tales-of-the-shattered-forest" style="background-color: #567263" target="_blank">Itch Page</a><br><br>
-                I developed the core gameplay systems for this project, starting with a hybrid movement system that supported both point-and-click and keyboard/gamepad controls. After experimenting with Character Controllers and NavMesh, 
-                I unified everything under NavMesh for consistency and added custom camera controls with rotation and zoom to support our non-Euclidean world. 
-                I built a flexible inventory architecture using ScriptableObjects, enums, and JSON serialization to handle saving/loading, along with a fully interactive drag&drop system. 
-                To make these systems accessible to the rest of the team, I focused on creating modular tools and clear in-engine workflows, while iterating based on designer feedback. 
-                Aside from programming, I also contributed to prototyping mechanics, discussing lore, and ensuring that features integrated smoothly into gameplay.
-            </p>
+                <p class="video-description">
+                    <span class="project-label" style="color: #567263">Team size: 6 </span><br>
+                    <span class="project-label" style="color: #567263">Project time: 7 weeks </span><br>
+                    <span class="project-label" style="color: #567263">Genre: Puzzle adventure </span><br>
+                    <a href="https://strandgear.itch.io/lyr-tales-of-the-shattered-forest" style="background-color: #567263" target="_blank">Itch Page</a><br><br>
+                    I developed the project’s core systems, starting with a hybrid control scheme (point-and-click and gamepad/keyboard), later unified under NavMesh.  
+                    I designed modular camera controls, a flexible inventory system with JSON save/load, and a drag-and-drop UI.  
+                    To support designers, I built tools for rapid iteration and ensured smooth integration of mechanics into the non-Euclidean world.  
+                    Collaboration and toolmaking were central to my role throughout development.  
+                    
+                </p>    
         </div>
     </div>
 
@@ -403,11 +416,14 @@
                 Your browser does not support the video tag.
                 </video>
             </div>
-            <p class="video-description">Together with another programmer we developed a multiplayer asymmetrical horror game as a semester project.
-                I focused on multiplayer systems and gameplay programming in Unreal Engine, where I built mechanics such as an ammo collection system, hit detection, and interactive objects with proper replication across clients. 
-                The core feature I worked on was a unique hitting system - when players take pictures, they deal damage to the ghost, with the value depending on bone count and proximity to the ghost’s head.  
-                Along the way I explored Unreal’s replication model, interfaces, and Blueprint workflows, solving challenges with synchronization and debugging client-server communication. 
-                Despite being new to the engine, we managed to design and build a fully functional multiplayer game within a short timeframe.
+            <p class="video-description">
+                <span class="project-label" style="color: #8035f8">Team size: 5 </span><br>
+                <span class="project-label" style="color: #8035f8">Project time: 7 weeks </span> <br>
+                <span class="project-label" style="color: #8035f8">Genre: Multiplayer asymmetrical horror </span> <br><br>
+                Together with another programmer, I developed a multiplayer horror game in Unreal Engine.  
+                My focus was on gameplay and replication: I built systems for ammo collection, hit detection, and interactive objects synced across clients.  
+                The core mechanic I implemented was a unique photo-based damage system, where shots dealt variable damage depending on bone hits and proximity.  
+                Despite being new to the engine, we delivered a fully functional multiplayer experience in just a few weeks.
             </p>
         </div>
     </div>
